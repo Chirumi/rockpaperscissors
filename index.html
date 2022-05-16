@@ -9,7 +9,19 @@
 </head>
 <body>
     <script>
-        
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection("rock")) {
+                if (computerSelection("rock")) {
+                    return "Tied!"
+                }
+            }
+        }
+        const playerSelection = "rock"
+        const computerSelection = computerPlay()
+
+        // User inputs from rock, paper or scissors //
+        // Computer RANDOMLY picks from rock, paper or scissors //
+        // Result would show either: win, lose or tie //
     </script>
 </body>
 </html>
