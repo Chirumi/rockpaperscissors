@@ -43,8 +43,9 @@
                 }
             }
         }
-
-        const playerSelection = "rock";
+        
+        const playerTurn = "ROCk";
+        let playerSelection = playerTurn.toLowerCase();
         const computerSelection = computerPlay();
         console.log("Player picks " + playerSelection);
         console.log("Computer picks " + computerSelection)
@@ -52,7 +53,6 @@
 
         function game() { //Need to play 5 separate rounds, separate meaning computerSelection are different each time //
             for (let i = 0; i < 5; i++) {
-                
             }
         }
 
