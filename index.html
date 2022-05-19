@@ -10,34 +10,35 @@
 <body>
     <script>
         function computerPlay() {
+
             const computerChoices = ["rock", "paper", "scissors"];
             return computerChoices[Math.floor(Math.random() * computerChoices.length)];
         }
+
         console.log("Computer picks " + computerPlay())
 
         function playRound(playerSelection, computerSelection) {
-            
 
             if (playerSelection === "rock") {
-                if (computerPlay === "rock") {
+                if (computerSelection === "rock") {
                     return "Tied!"
-                } else if (computerPlay === "scissors") {
+                } else if (computerSelection === "scissors") {
                     return  "You Win! Rock beats Scissors"
                 } else {
                     return "You Lose! Paper beats Rock"
                 }
             } else if (playerSelection === "paper") {
-                if (computerPlay === "rock") {
+                if (computerSelection === "rock") {
                     return "You Win! Paper beats Rock"
-                } else if (computerPlay === "scissors") {
+                } else if (computerSelection === "scissors") {
                     return  "You Lose! Scissors beats Paper"
                 } else {
                     return "Tied!"
                 }
             } else {
-                if (computerPlay === "rock") {
+                if (computerSelection === "rock") {
                     return "You Lose! Rock beats Scissors"
-                } else if (computerPlay === "scissors") {
+                } else if (computerSelection === "scissors") {
                     return  "Tied!"
                 } else {
                     return "You Win! Scissors beats Paper"
