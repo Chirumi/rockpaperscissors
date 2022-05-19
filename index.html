@@ -15,40 +15,39 @@
             return computerChoices[Math.floor(Math.random() * computerChoices.length)];
         }
 
-        console.log("Computer picks " + computerPlay())
-
         function playRound(playerSelection, computerSelection) {
 
             if (playerSelection === "rock") {
                 if (computerSelection === "rock") {
-                    return "Tied!"
+                    return "Tied!";
                 } else if (computerSelection === "scissors") {
-                    return  "You Win! Rock beats Scissors"
+                    return  "You Win! Rock beats Scissors";
                 } else {
-                    return "You Lose! Paper beats Rock"
+                    return "You Lose! Paper beats Rock";
                 }
             } else if (playerSelection === "paper") {
                 if (computerSelection === "rock") {
-                    return "You Win! Paper beats Rock"
+                    return "You Win! Paper beats Rock";
                 } else if (computerSelection === "scissors") {
-                    return  "You Lose! Scissors beats Paper"
+                    return  "You Lose! Scissors beats Paper";
                 } else {
-                    return "Tied!"
+                    return "Tied!";
                 }
             } else {
                 if (computerSelection === "rock") {
-                    return "You Lose! Rock beats Scissors"
+                    return "You Lose! Rock beats Scissors";
                 } else if (computerSelection === "scissors") {
-                    return  "Tied!"
+                    return  "Tied!";
                 } else {
-                    return "You Win! Scissors beats Paper"
+                    return "You Win! Scissors beats Paper";
                 }
             }
         }
 
         const playerSelection = "rock";
-        console.log("Player picks " + playerSelection);
         const computerSelection = computerPlay();
+        console.log("Player picks " + playerSelection);
+        console.log("Computer picks " + computerSelection)
         console.log(playRound(playerSelection, computerSelection));
 
     </script>
