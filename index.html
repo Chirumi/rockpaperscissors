@@ -9,39 +9,44 @@
 </head>
 <body>
     <script>
+        function computerPlay() {
+            const computerChoices = ["rock", "paper", "scissors"];
+            return computerChoices[Math.floor(Math.random() * computerChoices.length)];
+        }
+        console.log(computerPlay())
 
         function playRound(playerSelection, computerSelection) {
             
-            if (playerSelection("rock")) {
-                if (computerPlay("rock")) {
+
+            if (playerSelection === "rock") {
+                if (computerPlay === "rock") {
                     return "Tied!"
-                } else if (computerPlay("scissors")) {
+                } else if (computerPlay === "scissors") {
                     return  "You Win! Rock beats Scissors"
                 } else {
                     return "You Lose! Paper beats Rock"
                 }
-            } else if (playerSelection("paper")) {
-                if (computerPlay("rock")) {
+            } else if (playerSelection === "paper") {
+                if (computerPlay === "rock") {
                     return "You Win! Paper beats Rock"
-                } else if (computerPlay("scissors")) {
+                } else if (computerPlay === "scissors") {
                     return  "You Lose! Scissors beats Paper"
                 } else {
                     return "Tied!"
                 }
             } else {
-                if (computerPlay("rock")) {
+                if (computerPlay === "rock") {
                     return "You Lose! Rock beats Scissors"
-                } else if (computerPlay("scissors")) {
+                } else if (computerPlay === "scissors") {
                     return  "Tied!"
                 } else {
                     return "You Win! Scissors beats Paper"
                 }
             }
         }
-        const computerChoices = ["rock", "paper", "scissors"];
-        const computerPlay = computerChoices[Math.floor(Math.random() * computerChoices.length)];
 
-        const playerSelection = "rock";
+        const playerPick = "RoCK";
+        const playerSelection = playerPick.toLowerCase;
         const computerSelection = computerPlay();
         console.log(playRound(playerSelection, computerSelection));
 
