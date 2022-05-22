@@ -33,7 +33,7 @@
                 } else {
                     return "Tied!";
                 }
-            } else {
+            } else if (playerSelection === "scissors") {
                 if (computerSelection === "rock") {
                     return "You Lose! Rock beats Scissors";
                 } else if (computerSelection === "scissors") {
@@ -41,20 +41,30 @@
                 } else {
                     return "You Win! Scissors beats Paper";
                 }
+            } else if (playerSelection == "" || null) {
+                alert("Match cancelled!")
+            } else {
+                alert("Please type rock, paper or scissors only!")
             }
         }
-        
-        const playerTurn = "ROCk";
-        let playerSelection = playerTurn.toLowerCase();
-        const computerSelection = computerPlay();
-        console.log("Player picks " + playerSelection);
-        console.log("Computer picks " + computerSelection)
-        console.log(playRound(playerSelection, computerSelection));
+    
 
         function game() { //Need to play 5 separate rounds, separate meaning computerSelection are different each time //
             for (let i = 0; i < 5; i++) {
+                let playerTurn = prompt("Choose your rock, paper or scissors") // Use prompt to make 5 separate rounds instead of repeating 5 of the same rounds //
+                
+                if (playerTurn != null) {
+                    let playerSelection = playerTurn.toLowerCase();
+                    const computerSelection = computerPlay();
+            
+                    console.log("Player picks " + playerSelection);
+                    console.log("Computer picks " + computerSelection)
+                    console.log(playRound(playerSelection, computerSelection));
+                }
             }
         }
+
+        console.log(game());
 
     </script>
 </body>
