@@ -12,6 +12,7 @@
     <button class="btn2">Play Paper</button>
     <button class="btn3">Play Scissors</button>
     <div class="result"></div>
+    <div class="score"></div>
 
     <script>
         function computerPlay() {
@@ -80,9 +81,10 @@
             let finalResult = document.createElement("div")
             finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
             resultShow.appendChild(finalResult)
-            
-            console.log(`Player score = ${playerScore}`)
-            console.log(`Computer score = ${computerScore}`)
+
+            let scores = document.querySelector(".score")
+            scores.textContent += `Player Score = ${playerScore}`
+            scores.textContent += ` Computer score = ${computerScore}`
         }
 
         const playPaper = document.querySelector(".btn2")
@@ -106,8 +108,9 @@
             finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
             resultShow.appendChild(finalResult)
 
-            console.log(`Player score = ${playerScore}`)
-            console.log(`Computer score = ${computerScore}`)
+            let scores = document.querySelector(".score")
+            scores.textContent += `Player Score = ${playerScore}`
+            scores.textContent += ` Computer score = ${computerScore}`
         }
 
         const playScissors = document.querySelector(".btn3")
@@ -131,8 +134,9 @@
             finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
             resultShow.appendChild(finalResult)
 
-            console.log(`Player score = ${playerScore}`)
-            console.log(`Computer score = ${computerScore}`)
+            let scores = document.querySelector(".score")
+            scores.textContent += `Player Score = ${playerScore}`
+            scores.textContent += ` Computer score = ${computerScore}`
         }
 
     </script>
