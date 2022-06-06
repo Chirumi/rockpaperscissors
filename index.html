@@ -11,6 +11,8 @@
     <button class="btn1">Play Rock</button>
     <button class="btn2">Play Paper</button>
     <button class="btn3">Play Scissors</button>
+    <div class="result"></div>
+
     <script>
         function computerPlay() {
             const computerChoices = ["rock", "paper", "scissors"];
@@ -55,10 +57,20 @@
         function game() { 
             const playerSelection = "rock"
             const computerSelection = computerPlay();
-                
-            console.log("Player picks " + playerSelection); // What I picked
-            console.log("Computer picks " + computerSelection) // What RNG computer picked
-            console.log(playRound(playerSelection, computerSelection)); // Results
+
+            let resultShow = document.querySelector(".result")
+
+            let playerText = document.createElement("div")    
+            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+            resultShow.appendChild(playerText)
+
+            let computerText = document.createElement("div")
+            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+            resultShow.appendChild(computerText)
+            
+            let finalResult = document.createElement("div")
+            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+            resultShow.appendChild(finalResult)
         }
 
         const playPaper = document.querySelector(".btn2")
@@ -67,10 +79,20 @@
         function game2() { 
             const playerSelection = "paper"
             const computerSelection = computerPlay();
-                
-            console.log("Player picks " + playerSelection); // What I picked
-            console.log("Computer picks " + computerSelection) // What RNG computer picked
-            console.log(playRound(playerSelection, computerSelection)); // Results
+
+            let resultShow = document.querySelector(".result")
+
+            let playerText = document.createElement("div")    
+            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+            resultShow.appendChild(playerText)
+
+            let computerText = document.createElement("div")
+            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+            resultShow.appendChild(computerText)
+            
+            let finalResult = document.createElement("div")
+            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+            resultShow.appendChild(finalResult)
         }
 
         const playScissors = document.querySelector(".btn3")
@@ -79,10 +101,20 @@
         function game3() { 
             const playerSelection = "scissors"
             const computerSelection = computerPlay();
-                
-            console.log("Player picks " + playerSelection); // What I picked
-            console.log("Computer picks " + computerSelection) // What RNG computer picked
-            console.log(playRound(playerSelection, computerSelection)); // Results
+
+            let resultShow = document.querySelector(".result")
+
+            let playerText = document.createElement("div")    
+            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+            resultShow.appendChild(playerText)
+
+            let computerText = document.createElement("div")
+            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+            resultShow.appendChild(computerText)
+            
+            let finalResult = document.createElement("div")
+            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+            resultShow.appendChild(finalResult)
         }
 
     </script>
