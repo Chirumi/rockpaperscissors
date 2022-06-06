@@ -24,24 +24,30 @@
                 if (computerSelection === "rock") {
                     return "Tied!";
                 } else if (computerSelection === "scissors") {
+                    ++playerScore
                     return  "You Win! Rock beats Scissors";
                 } else {
+                    ++computerScore
                     return "You Lose! Paper beats Rock";
                 }
             } else if (playerSelection === "paper") {
                 if (computerSelection === "rock") {
+                    ++playerScore
                     return "You Win! Paper beats Rock";
                 } else if (computerSelection === "scissors") {
+                    ++computerScore
                     return  "You Lose! Scissors beats Paper";
                 } else {
                     return "Tied!";
                 }
             } else if (playerSelection === "scissors") {
                 if (computerSelection === "rock") {
+                    ++computerScore
                     return "You Lose! Rock beats Scissors";
                 } else if (computerSelection === "scissors") {
                     return  "Tied!";
                 } else {
+                    ++playerScore
                     return "You Win! Scissors beats Paper";
                 }
             } else if (playerSelection == "" || null) {
@@ -50,11 +56,14 @@
                 alert("Please type rock, paper or scissors only!")
             }
         }
+
+        let playerScore = 0
+        let computerScore = 0
         
         const playRock = document.querySelector(".btn1")
-        playRock.addEventListener("click", game)
+        playRock.addEventListener("click", gameRock)
         
-        function game() { 
+        function gameRock() { 
             const playerSelection = "rock"
             const computerSelection = computerPlay();
 
@@ -71,12 +80,15 @@
             let finalResult = document.createElement("div")
             finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
             resultShow.appendChild(finalResult)
+            
+            console.log(`Player score = ${playerScore}`)
+            console.log(`Computer score = ${computerScore}`)
         }
 
         const playPaper = document.querySelector(".btn2")
-        playPaper.addEventListener("click", game2)
+        playPaper.addEventListener("click", gamePaper)
         
-        function game2() { 
+        function gamePaper() { 
             const playerSelection = "paper"
             const computerSelection = computerPlay();
 
@@ -93,12 +105,15 @@
             let finalResult = document.createElement("div")
             finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
             resultShow.appendChild(finalResult)
+
+            console.log(`Player score = ${playerScore}`)
+            console.log(`Computer score = ${computerScore}`)
         }
 
         const playScissors = document.querySelector(".btn3")
-        playScissors.addEventListener("click", game3)
+        playScissors.addEventListener("click", gameScissors)
         
-        function game3() { 
+        function gameScissors() { 
             const playerSelection = "scissors"
             const computerSelection = computerPlay();
 
@@ -115,6 +130,9 @@
             let finalResult = document.createElement("div")
             finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
             resultShow.appendChild(finalResult)
+
+            console.log(`Player score = ${playerScore}`)
+            console.log(`Computer score = ${computerScore}`)
         }
 
     </script>
