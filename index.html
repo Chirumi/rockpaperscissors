@@ -53,12 +53,36 @@
         playRock.addEventListener("click", game)
         
         function game() { 
-            playerSelection = "rock"
+            const playerSelection = "rock"
             const computerSelection = computerPlay();
                 
-            console.log("Player picks " + playerSelection);
-            console.log("Computer picks " + computerSelection)
-            console.log(playRound(playerSelection, computerSelection));
+            console.log("Player picks " + playerSelection); // What I picked
+            console.log("Computer picks " + computerSelection) // What RNG computer picked
+            console.log(playRound(playerSelection, computerSelection)); // Results
+        }
+
+        const playPaper = document.querySelector(".btn2")
+        playPaper.addEventListener("click", game2)
+        
+        function game2() { 
+            const playerSelection = "paper"
+            const computerSelection = computerPlay();
+                
+            console.log("Player picks " + playerSelection); // What I picked
+            console.log("Computer picks " + computerSelection) // What RNG computer picked
+            console.log(playRound(playerSelection, computerSelection)); // Results
+        }
+
+        const playScissors = document.querySelector(".btn3")
+        playScissors.addEventListener("click", game3)
+        
+        function game3() { 
+            const playerSelection = "scissors"
+            const computerSelection = computerPlay();
+                
+            console.log("Player picks " + playerSelection); // What I picked
+            console.log("Computer picks " + computerSelection) // What RNG computer picked
+            console.log(playRound(playerSelection, computerSelection)); // Results
         }
 
     </script>
