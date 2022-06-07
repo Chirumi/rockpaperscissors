@@ -14,6 +14,7 @@
     <div class="result"></div>
     <div class="pResult">Player: 0</div>
     <div class="cResult">Computer: 0</div>
+    <div class="winner"></div>
 
     <script>
         // Counter for score
@@ -28,32 +29,41 @@
         function playRound(playerSelection, computerSelection) { // Get game winner
             if (playerSelection === "rock") {
                 if (computerSelection === "rock") {
+                    getWinner()
                     return "Tied!";
                 } else if (computerSelection === "scissors") {
                     ++playerScore
+                    getWinner()
                     return  "You Win! Rock beats Scissors";
                 } else {
                     ++computerScore
+                    getWinner()
                     return "You Lose! Paper beats Rock";
                 }
             } else if (playerSelection === "paper") {
                 if (computerSelection === "rock") {
                     ++playerScore
+                    getWinner()
                     return "You Win! Paper beats Rock";
                 } else if (computerSelection === "scissors") {
                     ++computerScore
+                    getWinner()
                     return  "You Lose! Scissors beats Paper";
                 } else {
+                    getWinner()
                     return "Tied!";
                 }
             } else if (playerSelection === "scissors") {
                 if (computerSelection === "rock") {
                     ++computerScore
+                    getWinner()
                     return "You Lose! Rock beats Scissors";
                 } else if (computerSelection === "scissors") {
+                    getWinner()
                     return  "Tied!";
                 } else {
                     ++playerScore
+                    getWinner()
                     return "You Win! Scissors beats Paper";
                 }
             } else if (playerSelection == "" || null) {
@@ -66,85 +76,81 @@
         const playRock = document.querySelector(".btn1")
         playRock.addEventListener("click", gameRock)
         
-        function gameRock () { 
-            for (let i = 0; i <= 5; i++) { // Plays game 5 times
-                const playerSelection = "rock"
-                const computerSelection = computerPlay();
-                let resultShow = document.querySelector(".result")
-                let playerText = document.createElement("div") 
-
-                playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-                resultShow.appendChild(playerText)
-                let computerText = document.createElement("div")
-                computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-                resultShow.appendChild(computerText)
-                
-                let finalResult = document.createElement("div")
-                finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-                resultShow.appendChild(finalResult)
-                const pScore = document.querySelector(".pResult")
-                pScore.textContent = `Player: ${playerScore}`
-                const cScore = document.querySelector(".cResult")
-                cScore.textContent = `Computer: ${computerScore}`
+        const inform = document.querySelector(".winner")
+        
+        function getWinner() {
+            if (playerScore === 5) {
+                inform.textContent = "YOU WON THE MATCH!"
+            } else if (computerScore === 5) {
+                inform.textContent = "YOU LOST THE MATCH!"
             }
+        }
+
+        function gameRock () { 
+            const playerSelection = "rock"
+            const computerSelection = computerPlay();
+            let resultShow = document.querySelector(".result")
+            let playerText = document.createElement("div") 
+            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+            resultShow.appendChild(playerText)
+            let computerText = document.createElement("div")
+            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+            resultShow.appendChild(computerText)
+            
+            let finalResult = document.createElement("div")
+            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+            resultShow.appendChild(finalResult)
+            const pScore = document.querySelector(".pResult")
+            pScore.textContent = `Player: ${playerScore}`
+            const cScore = document.querySelector(".cResult")
+            cScore.textContent = `Computer: ${computerScore}`
         }
 
         const playPaper = document.querySelector(".btn2")
         playPaper.addEventListener("click", gamePaper)
         
         function gamePaper() { 
-            for (let i = 0; i <= 5; i++) { // Plays game 5 times
-                const playerSelection = "paper"
-                const computerSelection = computerPlay();
-
-                let resultShow = document.querySelector(".result")
-
-                let playerText = document.createElement("div")    
-                playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-                resultShow.appendChild(playerText)
-
-                let computerText = document.createElement("div")
-                computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-                resultShow.appendChild(computerText)
-                
-                let finalResult = document.createElement("div")
-                finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-                resultShow.appendChild(finalResult)
-
-                const pScore = document.querySelector(".pResult")
-                pScore.textContent = `Player: ${playerScore}`
-                const cScore = document.querySelector(".cResult")
-                cScore.textContent = `Computer: ${computerScore}`
-            }
+            const playerSelection = "paper"
+            const computerSelection = computerPlay();
+            let resultShow = document.querySelector(".result")
+            let playerText = document.createElement("div")    
+            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+            resultShow.appendChild(playerText)
+            let computerText = document.createElement("div")
+            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+            resultShow.appendChild(computerText)
+            
+            let finalResult = document.createElement("div")
+            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+            resultShow.appendChild(finalResult)
+            const pScore = document.querySelector(".pResult")
+            pScore.textContent = `Player: ${playerScore}`
+            const cScore = document.querySelector(".cResult")
+            cScore.textContent = `Computer: ${computerScore}`
+            
         }
 
         const playScissors = document.querySelector(".btn3")
         playScissors.addEventListener("click", gameScissors)
         
         function gameScissors() { 
-            for (let i = 0; i <= 5; i++) { // Plays game 5 times
-                const playerSelection = "scissors"
-                const computerSelection = computerPlay();
-
-                let resultShow = document.querySelector(".result")
-
-                let playerText = document.createElement("div")    
-                playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-                resultShow.appendChild(playerText)
-
-                let computerText = document.createElement("div")
-                computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-                resultShow.appendChild(computerText)
-                
-                let finalResult = document.createElement("div")
-                finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-                resultShow.appendChild(finalResult)
-
-                const pScore = document.querySelector(".pResult")
-                pScore.textContent = `Player: ${playerScore}`
-                const cScore = document.querySelector(".cResult")
-                cScore.textContent = `Computer: ${computerScore}`
-            }
+            const playerSelection = "scissors"
+            const computerSelection = computerPlay();
+            let resultShow = document.querySelector(".result")
+            let playerText = document.createElement("div")    
+            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+            resultShow.appendChild(playerText)
+            let computerText = document.createElement("div")
+            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+            resultShow.appendChild(computerText)
+            
+            let finalResult = document.createElement("div")
+            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+            resultShow.appendChild(finalResult)
+            const pScore = document.querySelector(".pResult")
+            pScore.textContent = `Player: ${playerScore}`
+            const cScore = document.querySelector(".cResult")
+            cScore.textContent = `Computer: ${computerScore}`
         }
 
     </script>
