@@ -12,15 +12,20 @@
     <button class="btn2">Play Paper</button>
     <button class="btn3">Play Scissors</button>
     <div class="result"></div>
-    <div class="score"></div>
+    <div class="pResult">Player: 0</div>
+    <div class="cResult">Computer: 0</div>
 
     <script>
-        function computerPlay() {
+        // Counter for score
+        let playerScore = 0
+        let computerScore = 0
+
+        function computerPlay() { // Get computer choice
             const computerChoices = ["rock", "paper", "scissors"];
             return computerChoices[Math.floor(Math.random() * computerChoices.length)];
         }
 
-        function playRound(playerSelection, computerSelection) {
+        function playRound(playerSelection, computerSelection) { // Get game winner
             if (playerSelection === "rock") {
                 if (computerSelection === "rock") {
                     return "Tied!";
@@ -57,86 +62,89 @@
                 alert("Please type rock, paper or scissors only!")
             }
         }
-
-        let playerScore = 0
-        let computerScore = 0
         
         const playRock = document.querySelector(".btn1")
         playRock.addEventListener("click", gameRock)
         
-        function gameRock() { 
-            const playerSelection = "rock"
-            const computerSelection = computerPlay();
+        function gameRock () { 
+            for (let i = 0; i <= 5; i++) { // Plays game 5 times
+                const playerSelection = "rock"
+                const computerSelection = computerPlay();
+                let resultShow = document.querySelector(".result")
+                let playerText = document.createElement("div") 
 
-            let resultShow = document.querySelector(".result")
-
-            let playerText = document.createElement("div")    
-            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-            resultShow.appendChild(playerText)
-
-            let computerText = document.createElement("div")
-            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-            resultShow.appendChild(computerText)
-            
-            let finalResult = document.createElement("div")
-            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-            resultShow.appendChild(finalResult)
-
-            let scores = document.querySelector(".score")
-            scores.textContent += `Player Score = ${playerScore}`
-            scores.textContent += ` Computer score = ${computerScore}`
+                playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+                resultShow.appendChild(playerText)
+                let computerText = document.createElement("div")
+                computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+                resultShow.appendChild(computerText)
+                
+                let finalResult = document.createElement("div")
+                finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+                resultShow.appendChild(finalResult)
+                const pScore = document.querySelector(".pResult")
+                pScore.textContent = `Player: ${playerScore}`
+                const cScore = document.querySelector(".cResult")
+                cScore.textContent = `Computer: ${computerScore}`
+            }
         }
 
         const playPaper = document.querySelector(".btn2")
         playPaper.addEventListener("click", gamePaper)
         
         function gamePaper() { 
-            const playerSelection = "paper"
-            const computerSelection = computerPlay();
+            for (let i = 0; i <= 5; i++) { // Plays game 5 times
+                const playerSelection = "paper"
+                const computerSelection = computerPlay();
 
-            let resultShow = document.querySelector(".result")
+                let resultShow = document.querySelector(".result")
 
-            let playerText = document.createElement("div")    
-            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-            resultShow.appendChild(playerText)
+                let playerText = document.createElement("div")    
+                playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+                resultShow.appendChild(playerText)
 
-            let computerText = document.createElement("div")
-            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-            resultShow.appendChild(computerText)
-            
-            let finalResult = document.createElement("div")
-            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-            resultShow.appendChild(finalResult)
+                let computerText = document.createElement("div")
+                computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+                resultShow.appendChild(computerText)
+                
+                let finalResult = document.createElement("div")
+                finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+                resultShow.appendChild(finalResult)
 
-            let scores = document.querySelector(".score")
-            scores.textContent += `Player Score = ${playerScore}`
-            scores.textContent += ` Computer score = ${computerScore}`
+                const pScore = document.querySelector(".pResult")
+                pScore.textContent = `Player: ${playerScore}`
+                const cScore = document.querySelector(".cResult")
+                cScore.textContent = `Computer: ${computerScore}`
+            }
         }
 
         const playScissors = document.querySelector(".btn3")
         playScissors.addEventListener("click", gameScissors)
         
         function gameScissors() { 
-            const playerSelection = "scissors"
-            const computerSelection = computerPlay();
+            for (let i = 0; i <= 5; i++) { // Plays game 5 times
+                const playerSelection = "scissors"
+                const computerSelection = computerPlay();
 
-            let resultShow = document.querySelector(".result")
+                let resultShow = document.querySelector(".result")
 
-            let playerText = document.createElement("div")    
-            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-            resultShow.appendChild(playerText)
+                let playerText = document.createElement("div")    
+                playerText.textContent = `Player picks ${playerSelection}`  // What I picked
+                resultShow.appendChild(playerText)
 
-            let computerText = document.createElement("div")
-            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-            resultShow.appendChild(computerText)
-            
-            let finalResult = document.createElement("div")
-            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-            resultShow.appendChild(finalResult)
+                let computerText = document.createElement("div")
+                computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
+                resultShow.appendChild(computerText)
+                
+                let finalResult = document.createElement("div")
+                finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+                resultShow.appendChild(finalResult)
 
-            let scores = document.querySelector(".score")
-            scores.textContent += `Player Score = ${playerScore}`
-            scores.textContent += ` Computer score = ${computerScore}`
+                const pScore = document.querySelector(".pResult")
+                pScore.textContent = `Player: ${playerScore}`
+                const cScore = document.querySelector(".cResult")
+                cScore.textContent = `Computer: ${computerScore}`
+            }
         }
 
     </script>
