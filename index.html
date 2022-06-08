@@ -11,10 +11,13 @@
     <button class="btn1">Play Rock</button>
     <button class="btn2">Play Paper</button>
     <button class="btn3">Play Scissors</button>
-    <div class="result"></div>
+    <div class="pPick">You chose:</div>
+    <div class="cPick">Computer chose:</div>
+    <div class="roundResult"></div>
     <div class="pResult">Player: 0</div>
     <div class="cResult">Computer: 0</div>
     <div class="winner"></div>
+    <button class="playAgain">Play Again?</button>
 
     <script>
         // Counter for score
@@ -74,10 +77,12 @@
         }
 
         const inform = document.querySelector(".winner")
+        const restart = document.querySelector(".playAgain")
 
         function getWinner() {
             if (playerScore === 5) {
                 inform.textContent = "YOU WON THE MATCH!"
+                restart.style.display = "block"
                 playRock.removeEventListener("click", gameRock)
                 playPaper.removeEventListener("click", gamePaper)
                 playScissors.removeEventListener("click", gameScissors)
@@ -95,17 +100,15 @@
         function gameRock () { 
             const playerSelection = "rock"
             const computerSelection = computerPlay();
-            let resultShow = document.querySelector(".result")
-            let playerText = document.createElement("div") 
-            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-            resultShow.appendChild(playerText)
-            let computerText = document.createElement("div")
-            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-            resultShow.appendChild(computerText)
             
-            let finalResult = document.createElement("div")
-            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-            resultShow.appendChild(finalResult)
+            const playerPick = document.querySelector(".pPick")
+            playerPick.textContent = `You chose: ${playerSelection}`
+            const compPick = document.querySelector(".cPick")
+            compPick.textContent = `Computer chose: ${computerSelection}`
+
+            const rResult = document.querySelector(".roundResult")
+            rResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+
             const pScore = document.querySelector(".pResult")
             pScore.textContent = `Player: ${playerScore}`
             const cScore = document.querySelector(".cResult")
@@ -118,17 +121,15 @@
         function gamePaper() { 
             const playerSelection = "paper"
             const computerSelection = computerPlay();
-            let resultShow = document.querySelector(".result")
-            let playerText = document.createElement("div")    
-            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-            resultShow.appendChild(playerText)
-            let computerText = document.createElement("div")
-            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-            resultShow.appendChild(computerText)
+
+            const playerPick = document.querySelector(".pPick")
+            playerPick.textContent = `You chose: ${playerSelection}`
+            const compPick = document.querySelector(".cPick")
+            compPick.textContent = `Computer chose: ${computerSelection}`
             
-            let finalResult = document.createElement("div")
-            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-            resultShow.appendChild(finalResult)
+            const rResult = document.querySelector(".roundResult")
+            rResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+
             const pScore = document.querySelector(".pResult")
             pScore.textContent = `Player: ${playerScore}`
             const cScore = document.querySelector(".cResult")
@@ -141,17 +142,15 @@
         function gameScissors() { 
             const playerSelection = "scissors"
             const computerSelection = computerPlay();
-            let resultShow = document.querySelector(".result")
-            let playerText = document.createElement("div")    
-            playerText.textContent = `Player picks ${playerSelection}`  // What I picked
-            resultShow.appendChild(playerText)
-            let computerText = document.createElement("div")
-            computerText.textContent = `Computer picks ${computerSelection}` // What RNG computer picked
-            resultShow.appendChild(computerText)
             
-            let finalResult = document.createElement("div")
-            finalResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-            resultShow.appendChild(finalResult)
+            const playerPick = document.querySelector(".pPick")
+            playerPick.textContent = `You chose: ${playerSelection}`
+            const compPick = document.querySelector(".cPick")
+            compPick.textContent = `Computer chose: ${computerSelection}`
+            
+            const rResult = document.querySelector(".roundResult")
+            rResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
+
             const pScore = document.querySelector(".pResult")
             pScore.textContent = `Player: ${playerScore}`
             const cScore = document.querySelector(".cResult")
