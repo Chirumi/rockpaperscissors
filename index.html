@@ -101,6 +101,9 @@
             playRock.addEventListener("click", gameRock)
             playPaper.addEventListener("click", gamePaper)
             playScissors.addEventListener("click", gameScissors)
+
+            //Remove Play Again Button
+            restart.style.display = "none"
         })
 
         function getWinner() { // Determines winner and stops game after 5 rounds
