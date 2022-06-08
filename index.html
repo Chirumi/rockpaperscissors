@@ -79,6 +79,9 @@
         const inform = document.querySelector(".winner")
         const restart = document.querySelector(".playAgain")
         restart.style.display = "none"
+        restart.addEventListener("click", () => {
+
+        })
 
         function getWinner() {
             if (playerScore === 5) {
@@ -99,56 +102,32 @@
         playRock.addEventListener("click", gameRock)
 
         function gameRock () { 
-            const playerSelection = "rock"
-            const computerSelection = computerPlay();
-            
-            const playerPick = document.querySelector(".pPick")
-            playerPick.textContent = `You chose: ${playerSelection}`
-            const compPick = document.querySelector(".cPick")
-            compPick.textContent = `Computer chose: ${computerSelection}`
-
-            const rResult = document.querySelector(".roundResult")
-            rResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-
-            const pScore = document.querySelector(".pResult")
-            pScore.textContent = `Player: ${playerScore}`
-            const cScore = document.querySelector(".cResult")
-            cScore.textContent = `Computer: ${computerScore}`
+            round("rock")
         }
 
         const playPaper = document.querySelector(".btn2")
         playPaper.addEventListener("click", gamePaper)
         
         function gamePaper() { 
-            const playerSelection = "paper"
-            const computerSelection = computerPlay();
-
-            const playerPick = document.querySelector(".pPick")
-            playerPick.textContent = `You chose: ${playerSelection}`
-            const compPick = document.querySelector(".cPick")
-            compPick.textContent = `Computer chose: ${computerSelection}`
-            
-            const rResult = document.querySelector(".roundResult")
-            rResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
-
-            const pScore = document.querySelector(".pResult")
-            pScore.textContent = `Player: ${playerScore}`
-            const cScore = document.querySelector(".cResult")
-            cScore.textContent = `Computer: ${computerScore}`
+            round("paper")
         }
 
         const playScissors = document.querySelector(".btn3")
         playScissors.addEventListener("click", gameScissors)
         
         function gameScissors() { 
-            const playerSelection = "scissors"
+            round("scissors")
+        }
+
+        function round(weapon) {
+            const playerSelection = weapon
             const computerSelection = computerPlay();
             
             const playerPick = document.querySelector(".pPick")
             playerPick.textContent = `You chose: ${playerSelection}`
             const compPick = document.querySelector(".cPick")
             compPick.textContent = `Computer chose: ${computerSelection}`
-            
+
             const rResult = document.querySelector(".roundResult")
             rResult.textContent = `${playRound(playerSelection, computerSelection)}` // Results
 
@@ -157,7 +136,6 @@
             const cScore = document.querySelector(".cResult")
             cScore.textContent = `Computer: ${computerScore}`
         }
-
     </script>
 </body>
 </html>
