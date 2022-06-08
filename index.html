@@ -92,6 +92,7 @@
                 playScissors.removeEventListener("click", gameScissors)
             } else if (computerScore === 5) {
                 inform.textContent = "YOU LOST THE MATCH!"
+                restart.style.display = "block"
                 playRock.removeEventListener("click", gameRock)
                 playPaper.removeEventListener("click", gamePaper)
                 playScissors.removeEventListener("click", gameScissors)
