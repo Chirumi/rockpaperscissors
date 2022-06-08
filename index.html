@@ -24,12 +24,12 @@
         let playerScore = 0
         let computerScore = 0
 
-        function computerPlay() { // Get computer choice
+        function computerPlay() { // Get computer choice RNG
             const computerChoices = ["rock", "paper", "scissors"];
             return computerChoices[Math.floor(Math.random() * computerChoices.length)];
         }
 
-        function playRound(playerSelection, computerSelection) { // Get game winner
+        function playRound(playerSelection, computerSelection) { // Win/Lose conditions
             if (playerSelection === "rock") {
                 if (computerSelection === "rock") {
                     getWinner()
@@ -83,7 +83,7 @@
 
         })
 
-        function getWinner() {
+        function getWinner() { // Determines winner and stops game after 5 rounds
             if (playerScore === 5) {
                 inform.textContent = "YOU WON THE MATCH!"
                 restart.style.display = "block"
@@ -98,28 +98,25 @@
             }
         }
         
-        const playRock = document.querySelector(".btn1")
+        const playRock = document.querySelector(".btn1") // Rock
         playRock.addEventListener("click", gameRock)
-
         function gameRock () { 
             round("rock")
         }
 
-        const playPaper = document.querySelector(".btn2")
+        const playPaper = document.querySelector(".btn2") // Paper
         playPaper.addEventListener("click", gamePaper)
-        
         function gamePaper() { 
             round("paper")
         }
 
-        const playScissors = document.querySelector(".btn3")
+        const playScissors = document.querySelector(".btn3") // Scissors
         playScissors.addEventListener("click", gameScissors)
-        
         function gameScissors() { 
             round("scissors")
         }
 
-        function round(weapon) {
+        function round(weapon) { // Plays rounds
             const playerSelection = weapon
             const computerSelection = computerPlay();
             
