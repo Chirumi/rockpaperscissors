@@ -17,6 +17,7 @@
             <button class="btn2"><img height="100px" width="100px" src="./images/paper.jpg"></button>
             <button class="btn3"><img height="100px" width="100px" src="./images/scissor2.jpg"></button>
         </div>
+        <div class="winner"></div>
         <div class="choices">
             <div class="pPick">You chose:</div>
             <div class="cPick">Computer chose:</div>
@@ -24,7 +25,6 @@
         <div class="roundResult">Round result:</div>
         <div class="pResult">Player: 0</div>
         <div class="cResult">Computer: 0</div>
-        <div class="winner"></div>
         <button class="playAgain">Play Again?</button>
     </div>
 
@@ -103,7 +103,7 @@
             const compPick = document.querySelector(".cPick")
             compPick.textContent = `Computer chose:`
             const rResult = document.querySelector(".roundResult")
-            rResult.textContent = ""
+            rResult.textContent = "Round result:"
             inform.textContent = ""
 
             //Reactivate buttons
