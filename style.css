@@ -29,4 +29,10 @@ body {
     gap: 250px;
 }
 
+.btn1,
+.btn2,
+.btn3 {
+    padding: 0px;
+}
+
 
