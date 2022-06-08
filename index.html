@@ -72,19 +72,25 @@
                 alert("Please type rock, paper or scissors only!")
             }
         }
-        
-        const playRock = document.querySelector(".btn1")
-        playRock.addEventListener("click", gameRock)
-        
+
         const inform = document.querySelector(".winner")
-        
+
         function getWinner() {
             if (playerScore === 5) {
                 inform.textContent = "YOU WON THE MATCH!"
+                playRock.removeEventListener("click", gameRock)
+                playPaper.removeEventListener("click", gamePaper)
+                playScissors.removeEventListener("click", gameScissors)
             } else if (computerScore === 5) {
                 inform.textContent = "YOU LOST THE MATCH!"
+                playRock.removeEventListener("click", gameRock)
+                playPaper.removeEventListener("click", gamePaper)
+                playScissors.removeEventListener("click", gameScissors)
             }
         }
+        
+        const playRock = document.querySelector(".btn1")
+        playRock.addEventListener("click", gameRock)
 
         function gameRock () { 
             const playerSelection = "rock"
@@ -127,7 +133,6 @@
             pScore.textContent = `Player: ${playerScore}`
             const cScore = document.querySelector(".cResult")
             cScore.textContent = `Computer: ${computerScore}`
-            
         }
 
         const playScissors = document.querySelector(".btn3")
