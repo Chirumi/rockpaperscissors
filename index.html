@@ -80,7 +80,27 @@
         const restart = document.querySelector(".playAgain")
         restart.style.display = "none"
         restart.addEventListener("click", () => {
+            //Reset score to 0 so getWinner() conditions can still apply for another match
+            playerScore = 0
+            computerScore = 0
+            const pScore = document.querySelector(".pResult")
+            pScore.textContent = `Player: ${playerScore}`
+            const cScore = document.querySelector(".cResult")
+            cScore.textContent = `Computer: ${computerScore}`
 
+            //Reset texts
+            const playerPick = document.querySelector(".pPick")
+            playerPick.textContent = `You chose:`
+            const compPick = document.querySelector(".cPick")
+            compPick.textContent = `Computer chose:`
+            const rResult = document.querySelector(".roundResult")
+            rResult.textContent = ""
+            inform.textContent = ""
+
+            //Reactivate buttons
+            playRock.addEventListener("click", gameRock)
+            playPaper.addEventListener("click", gamePaper)
+            playScissors.addEventListener("click", gameScissors)
         })
 
         function getWinner() { // Determines winner and stops game after 5 rounds
