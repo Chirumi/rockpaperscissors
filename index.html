@@ -105,33 +105,34 @@
             compPick.textContent = `Computer chose:`
             const rResult = document.querySelector(".roundResult")
             rResult.textContent = "Round result:"
-            inform.textContent = ""
-
             //Reactivate buttons
             playRock.addEventListener("click", gameRock)
             playPaper.addEventListener("click", gamePaper)
             playScissors.addEventListener("click", gameScissors)
 
-            //Remove Play Again Button
+            //Remove Play Again Button and match result
             restart.style.display = "none"
+            inform.style.display = "none"
+
         })
 
         function getWinner() { // Determines winner and stops game after 5 rounds
             if (playerScore === 5) {
                 inform.textContent = "YOU WON THE MATCH!"
-                inform.style.backgroundColor = "rgba(0,0,0,0.6)"
+                inform.style.backgroundColor = "rgba(0,0,0,0.8)"
                 inform.style.borderRadius = "10px"
                 inform.style.padding = "20px"
+                inform.style.display = "block"
                 restart.style.display = "block"
                 playRock.removeEventListener("click", gameRock)
                 playPaper.removeEventListener("click", gamePaper)
                 playScissors.removeEventListener("click", gameScissors)
             } else if (computerScore === 5) {
                 inform.textContent = "YOU LOST THE MATCH!"
-                inform.style.backgroundColor = "rgba(0,0,0,0.6)"
-                inform.style.backgroundColor = "black"
+                inform.style.backgroundColor = "rgba(0,0,0,0.8)"
                 inform.style.borderRadius = "10px"
                 inform.style.padding = "20px"
+                inform.style.display = "block"
                 restart.style.display = "block"
                 playRock.removeEventListener("click", gameRock)
                 playPaper.removeEventListener("click", gamePaper)

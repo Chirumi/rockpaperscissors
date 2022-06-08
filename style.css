@@ -20,9 +20,9 @@ body {
 .header {
     text-align: center;
     background-color: rgba(0,0,0,.8);
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
     border-radius: 10px;
 }
 
@@ -45,7 +45,7 @@ body {
 
 .btn {
     display: flex;
-    gap: 50px
+    gap: 50px;
 }
 
 .btn1,
@@ -56,7 +56,7 @@ body {
     border-width: 5px;
     border-radius: 10px;
     background-color: rgba(0,0,0,0);
-    border-color: rgba(0,0,0,.6);
+    border-color: rgba(0,0,0,.8);
     border-style: solid
 }
 
@@ -68,9 +68,18 @@ img {
 .cPick,
 .roundResult,
 .pResult,
+.playAgain,
 .cResult {
-    background-color: rgba(0,0,0,.6);
+    background-color: rgba(0,0,0,.8);
     border-radius: 10px;
     padding: 20px;
+}
+
+.playAgain {
+    font-family: myFirstFont;
+    color: rgb(60, 255, 0);
+    border-color: rgb(60, 255, 0);
+    border-style: solid;
+    background-color: black;
 }
 
