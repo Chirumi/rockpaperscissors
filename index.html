@@ -8,16 +8,25 @@
     <title>Rock, Paper, Scissors!</title>
 </head>
 <body>
-    <button class="btn1">Play Rock</button>
-    <button class="btn2">Play Paper</button>
-    <button class="btn3">Play Scissors</button>
-    <div class="pPick">You chose:</div>
-    <div class="cPick">Computer chose:</div>
-    <div class="roundResult"></div>
-    <div class="pResult">Player: 0</div>
-    <div class="cResult">Computer: 0</div>
-    <div class="winner"></div>
-    <button class="playAgain">Play Again?</button>
+    <div class="header">
+        <h1 class="headerText">Rock, Paper, Scissors by Michiru</h1>
+    </div>
+    <div class="content">
+        <div class="btn">
+            <button class="btn1">Play Rock</button>
+            <button class="btn2">Play Paper</button>
+            <button class="btn3">Play Scissors</button>
+        </div>
+        <div class="choices">
+            <div class="pPick">You chose:</div>
+            <div class="cPick">Computer chose:</div>
+        </div>
+        <div class="roundResult"></div>
+        <div class="pResult">Player: 0</div>
+        <div class="cResult">Computer: 0</div>
+        <div class="winner"></div>
+        <button class="playAgain">Play Again?</button>
+    </div>
 
     <script>
         // Counter for score
@@ -79,7 +88,7 @@
         const inform = document.querySelector(".winner")
         const restart = document.querySelector(".playAgain")
         restart.style.display = "none"
-        restart.addEventListener("click", () => {
+        restart.addEventListener("click", () => { // Reset Button
             //Reset score to 0 so getWinner() conditions can still apply for another match
             playerScore = 0
             computerScore = 0
