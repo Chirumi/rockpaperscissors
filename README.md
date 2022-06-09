@@ -1,3 +1,6 @@
+TO DO:
+Make content shrink when changing window size (it does not work on windows google chrome, but is fine in Xubuntu VM)
+
 A rock, paper, scisors game made by using HTML, CSS and JS 
 What I have learned: How to do transition animations 
 How to replace texts using js (scoring system and match winner) 
