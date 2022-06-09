@@ -11,6 +11,7 @@ How to change color opacity using rgba
 How to use custom fonts on CSS
 How to make images have rounded edges using CSS
 How to add background to the webpage
+How to use git branches
 
 Problems encountered:
 Empty .winner div box persists when clicking replay button which messes up the spacing of other divs: made a permanent text to the div so that spacing is uniform before and after replay button
