@@ -56,8 +56,14 @@ body {
     border-width: 5px;
     border-radius: 10px;
     background-color: rgba(0,0,0,0);
-    border-color: rgba(0,0,0,.8);
-    border-style: solid
+    border-color: rgba(0,0,0,0.8);
+    border-style: solid;
+    transition: all 0.08s;
+}
+
+.clicked {
+    transform:scale(1.2);
+    box-shadow: 0 0 10px #eeff00;
 }
 
 img {
@@ -69,7 +75,8 @@ img {
 .roundResult,
 .pResult,
 .playAgain,
-.cResult {
+.cResult,
+.winner {
     background-color: rgba(0,0,0,.8);
     border-radius: 10px;
     padding: 20px;

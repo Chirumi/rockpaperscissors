@@ -13,11 +13,11 @@
     </div>
     <div class="content">
         <div class="btn">
-            <button class="btn1"><img height="100px" width="100px" src="./images/pebble.jpg"></button>
-            <button class="btn2"><img height="100px" width="100px" src="./images/paper.jpg"></button>
-            <button class="btn3"><img height="100px" width="100px" src="./images/scissor2.jpg"></button>
+            <button class="btn1 choice"><img height="100px" width="100px" src="./images/pebble.jpg"></button>
+            <button class="btn2 choice" ><img height="100px" width="100px" src="./images/paper.jpg"></button>
+            <button class="btn3 choice"><img height="100px" width="100px" src="./images/scissor2.jpg"></button>
         </div>
-        <div class="winner"></div>
+        <div class="winner">Pick your weapon!</div>
 
         <button class="playAgain">Play Again?</button>
         <div class="choices">
@@ -105,6 +105,7 @@
             compPick.textContent = `Computer chose:`
             const rResult = document.querySelector(".roundResult")
             rResult.textContent = "Round result:"
+            inform.textContent = "Pick your weapon!"
             //Reactivate buttons
             playRock.addEventListener("click", gameRock)
             playPaper.addEventListener("click", gamePaper)
@@ -112,7 +113,7 @@
 
             //Remove Play Again Button and match result
             restart.style.display = "none"
-            inform.style.display = "none"
+            
 
         })
 
@@ -144,18 +145,21 @@
         playRock.addEventListener("click", gameRock)
         function gameRock () { 
             round("rock")
+            playRock.classList.add("clicked")
         }
 
         const playPaper = document.querySelector(".btn2") // Paper
         playPaper.addEventListener("click", gamePaper)
         function gamePaper() { 
             round("paper")
+            playPaper.classList.add("clicked")
         }
 
         const playScissors = document.querySelector(".btn3") // Scissors
         playScissors.addEventListener("click", gameScissors)
         function gameScissors() { 
             round("scissors")
+            playScissors.classList.add("clicked")
         }
 
         function round(weapon) { // Plays rounds
@@ -175,6 +179,15 @@
             const cScore = document.querySelector(".cResult")
             cScore.textContent = `Computer: ${computerScore}`
         }
+
+
+        function removeTransition(e) {
+            if(e.propertyName !== "transform") return;
+            this.classList.remove("clicked")
+        } 
+
+        const weapons = document.querySelectorAll(".choice")
+        weapons.forEach(choice => choice.addEventListener("transitionend", removeTransition))
     </script>
 </body>
 </html>
